@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+// cars -> Return headline all cars
+Route::get('/cars', [CarController::class, 'index'])->name('cars.index'); //naming reference
+Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+// /cars/2
+Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
+
+

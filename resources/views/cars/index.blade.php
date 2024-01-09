@@ -1,0 +1,61 @@
+@extends('layouts.main')
+
+@section('content')
+
+<main class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-title">
+                  <div class="d-flex align-items-center">
+                    <h2 class="mb-0">All Cars</h2>
+                    <div class="ml-auto">
+                      <a href="{{route('cars.create')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>
+                    </div>
+                  </div>
+                </div>
+              <div class="card-body">
+                @include('cars._filter')
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Model</th>
+                      <th scope="col">Year</th>
+                      <th scope="col">Salesperson's Email</th>
+                      <th scope="col">Manufacturer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                    @if($cars->count())
+                    <!--- Generate table rows using a loop ---->
+                      @foreach($cars as $index => $cars)
+                      <tr>
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>{{ $car->first_name}}</td>
+                        <td>{{ $car->last_name}}</td>
+                        <td>{{ $car->email}}</td>
+                        <td>{{ $car->company->name}}</td>
+                        <td width="150">
+                          <a href="{{ route('cars.show', $cars->id) }}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
+                          <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
+                          <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                      @endforeach
+                    @endif
+                  </tbody>
+                </table> 
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+@endsection

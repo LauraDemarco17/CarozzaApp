@@ -12,4 +12,12 @@ class Car extends Model
     //enable mass assignment
     protected $fillable = ['model', 'year', 'salesperson_email'];
 
+
+    public function manufacturer(){
+        //establish one to many relationship with the model contact
+        return this->belongsTo(Manufacturer::class); //Manufacturer model has many cars
+    }
+
+
+
 }
