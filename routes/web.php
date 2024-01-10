@@ -28,3 +28,8 @@ Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
 
 Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
 
+// Display edit car form
+Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit');
+
+// Update the car details (PUT request)
+Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
