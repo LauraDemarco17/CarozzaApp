@@ -30,4 +30,9 @@ class CarController extends Controller
         return view('cars.show', compact('car')); // ['contact'] => $contact
     }
 
+    function store(Request $request) {
+        dd($request->all());
+    }
+
+
 }
