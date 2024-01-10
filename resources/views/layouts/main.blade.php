@@ -28,7 +28,7 @@
         <!-- /.navbar-header -->
         <div class="collapse navbar-collapse" id="navbar-toggler">
           <ul class="navbar-nav">
-            <li class="nav-item"><a href="#" class="nav-link">Manufacturers</a></li>
+            <li class="nav-item active"><a href="#" class="nav-link">Manufacturers</a></li>
             <li class="nav-item active"><a href="#" class="nav-link">Cars</a></li>
           </ul>
         </div>
