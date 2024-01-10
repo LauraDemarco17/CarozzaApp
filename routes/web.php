@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ManufacturerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +38,6 @@ Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
 
 // Delete
 Route::delete('/cars/{id}', [CarController::class, 'destroy'])->name('cars.destroy');
+
+// cars -> Return headline all manufacturers
+Route::get('/manufacturers', [ManufacturerController::class, 'index'])->name('manufacturers.index');
