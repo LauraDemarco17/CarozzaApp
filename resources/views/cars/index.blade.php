@@ -32,15 +32,15 @@
 
                     @if($cars->count())
                     <!--- Generate table rows using a loop ---->
-                      @foreach($cars as $index => $cars)
+                      @foreach($cars as $index => $car)
                       <tr>
                         <th scope="row">{{$index + 1}}</th>
-                        <td>{{ $car->first_name}}</td>
-                        <td>{{ $car->last_name}}</td>
-                        <td>{{ $car->email}}</td>
-                        <td>{{ $car->company->name}}</td>
+                        <td>{{ $car->model}}</td>
+                        <td>{{ $car->year}}</td>
+                        <td>{{ $car->salesperson_email}}</td>
+                        <td>{{ $car->manufacturer->name}}</td>
                         <td width="150">
-                          <a href="{{ route('cars.show', $cars->id) }}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
+                          <a href="{{ route('cars.show', $car->id) }}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
                           <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
                           <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                         </td>

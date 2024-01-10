@@ -14,7 +14,7 @@ class Manufacturer extends Model
 
     public function cars(){
         //establish one to many relationship with the model contact
-        return this->hasMany(Car::class); //Manufacturer model has many cars
+        return $this->hasMany(Car::class); //Manufacturer model has many cars
     }
 
 

@@ -15,7 +15,7 @@ class Car extends Model
 
     public function manufacturer(){
         //establish one to many relationship with the model contact
-        return this->belongsTo(Manufacturer::class); //Manufacturer model has many cars
+        return $this->belongsTo(Manufacturer::class); //Manufacturer model has many cars
     }
 
 

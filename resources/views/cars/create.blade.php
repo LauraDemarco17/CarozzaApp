@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 
 @section('content')
@@ -18,7 +18,7 @@
                       <div class="col-md-9">
                         <input type="text" name="model" id="model" class="form-control is-invalid">
                         <div class="invalid-feedback">
-                          Please choose a username.
+                          Please input a model.
                         </div>
                       </div>
                     </div>
@@ -42,8 +42,8 @@
                       <div class="col-md-9">
                         <select name="manufacturer_id" id="manufacturer_id" class="form-control">
                           <option value="">Select Manufacturer</option>
-                          <option value="1">Company One</option>
-                          <option value="2">Company Two</option>
+                          <option value="1">Toyota Motor Corporation</option>
+                          <option value="2">BMW Group</option>
                         </select>
                       </div>
                     </div>
