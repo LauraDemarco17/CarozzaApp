@@ -25,14 +25,20 @@ class CarController extends Controller
         return view('cars.create', compact('manufacturers'));
     }
 
+
+    function store(Request $request) {
+        $request->validate([
+            'model'=>'required',
+            'year'=>'required',
+            'salesperson_email'=>'required',
+            'manufacturer_id'=>'required | exists:manufacturers, id'
+        ]);
+        dd($request->all());
+    }
+
     function show($id) {
         $car = Car::find($id);
         return view('cars.show', compact('car')); // ['contact'] => $contact
     }
-
-    function store(Request $request) {
-        dd($request->all());
-    }
-
 
 }
