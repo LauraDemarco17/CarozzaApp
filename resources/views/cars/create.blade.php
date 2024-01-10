@@ -10,7 +10,7 @@
             <strong>Add New Car</strong>
           </div>
           <form action="{{ route('cars.store') }}" method="POST">
-            @crsf
+            @csrf
             @include('cars._form')
           </form>
         </div>

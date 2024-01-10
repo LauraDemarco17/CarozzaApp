@@ -21,9 +21,10 @@ Route::get('/', function () {
 
 
 // cars -> Return headline all cars
-Route::get('/cars', [CarController::class, 'index'])->name('cars.index'); //naming reference
-Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
-// /cars/2
-Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
+Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 
+Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+
+Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
 

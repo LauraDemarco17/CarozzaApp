@@ -10,7 +10,7 @@ class Car extends Model
     use HasFactory;
 
     //enable mass assignment
-    protected $fillable = ['model', 'year', 'salesperson_email'];
+    protected $fillable = ['model', 'year', 'salesperson_email', 'manufacturer_id'];
 
 
     public function manufacturer(){

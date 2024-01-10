@@ -26,19 +26,22 @@ class CarController extends Controller
     }
 
 
-    function store(Request $request) {
+    public function store(Request $request) {
+
         $request->validate([
-            'model'=>'required',
-            'year'=>'required',
-            'salesperson_email'=>'required',
-            'manufacturer_id'=>'required | exists:manufacturers, id'
+            'model' => 'required',
+            'year' => 'required',
+            'salesperson_email' => 'required|email',
+            'manufacturer_id' => 'required|exists:manufacturers,id'
         ]);
-        dd($request->all());
+
+        Car::create($request->all());
+        return redirect()->route('cars.index')->with('message', 'Car has been added successfully');
     }
 
     function show($id) {
         $car = Car::find($id);
-        return view('cars.show', compact('car')); // ['contact'] => $contact
+        return view('cars.show', compact('car')); 
     }
 
 }
